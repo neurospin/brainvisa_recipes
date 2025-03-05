@@ -1,5 +1,9 @@
-Jeu des jumeaux GUI
-===================
+## Get started
+```
+bv python twingame.py -c twin_config_hcp.json
+```
+
+## Miscellaneous
 
 1 fenêtre
 panneau gauche: boutons
