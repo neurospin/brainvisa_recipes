@@ -1,3 +1,5 @@
+# Twin game
+
 ## Get started
 
 First, you need to have installed BrainVISA (the following has been tested with the BrainVISA developer installation (see <https://brainvisa.info/web/download.html>).
