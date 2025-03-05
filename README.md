@@ -1,13 +1,13 @@
 # brainvisa_recipes
 
-## Get started
+# Get started
 
 You first have to install pyanatomist and pyaims. You can do it in two ways, either with the contained AppTainer or using pixi:
 
-### The AppTainer way
+## The AppTainer way
 Installation: you have to install the whole BrainVISA container. Please follow the instructions to download and install the **developper installation** given in <https://brainvisa.info/web/download.html>.
 
-### The pixi way
+## The pixi way
 
 You should first get pixi:
 
