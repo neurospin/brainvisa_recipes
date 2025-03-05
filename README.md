@@ -11,7 +11,10 @@ Installation: you have to install the whole BrainVISA container. Please follow t
 
 You should first get pixi:
 
-```curl -fsSL https://pixi.sh/install.sh | bash```
+```
+curl -fsSL https://pixi.sh/install.sh | bash
+source ~/.bashrc
+```
 
 You then create a pixi environment (we place here this environment in the directory env_pixi):
 ```
