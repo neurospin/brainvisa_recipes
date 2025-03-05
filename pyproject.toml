@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brainvisa_recipes"
+version = "2025.0.0"
+dependencies = [
+  "numpy",
+  "pandas",
+]
+requires-python = ">=3.11"
+authors = [
+  {name = "Joël Chavas", email = "joel.chavas@cea.fr"},
+  {name = "Denis Rivière", email = "denis.riviere@cea.fr"},
+  {name = "Antoine Dufournet"}, {email = "antoine.dufournet@cea.fr"},
+  {name = "Julien Laval"}, {email = "julien.laval@cea.fr"},
+]
+maintainers = [
+  {name = "Joël Chavas", email = "joel.chavas@©ea.fr"}
+]
+description = "Recipes to use of pyanatomist and pyaims"
+readme = "README.md"
+keywords = ["pyaims", "pyanatomist", "BrainVISA", "python", "notebook"]
+classifiers = [
+  "Development Status :: Beta",
+  "Programming Language :: Python"
+]
+
+[project.urls]
+# Homepage = "https://example.com"
+# Documentation = "https://readthedocs.org"
+Repository = "https://github.com/neurospin/brainvisa_recipes"
+# "Bug Tracker" = "https://github.com/me/spam/issues"
+# Changelog = ""
+
+
