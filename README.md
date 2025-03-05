@@ -29,5 +29,5 @@ pixi shell
 
 | Software | Content |
 | ------------- | ------------- |
-| twin_game  | python code to launch the twin game, whose scope is to guess the right pair of brain twins  |
+| twin_game  | python code to launch the twin game, whose scope is to guess the correct pair of brain twins  |
 | notebooks  | Useful notebooks |
