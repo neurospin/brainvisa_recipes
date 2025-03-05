@@ -1,4 +1,8 @@
 ## Get started
+
+First, you need to have installed BrainVISA (the following has been tested with the BrainVISA developer installation (see <https://brainvisa.info/web/download.html>).
+
+The following will work if the HCP dataset is in the directory /neurospin/dico/data/bv_databases/human/not_labeled/hcp, which is the case if you are running the software from the neurospin computer. 
 ```
 bv python twingame.py -c twin_config_hcp.json
 ```
