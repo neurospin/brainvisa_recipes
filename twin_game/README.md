@@ -16,7 +16,7 @@ bv python twingame.py -c twin_config_hcp.json
 bv bash
 python twingame.py -c twin_config_hcp.json
 ```
-Otherwise, if you have installed pyanatomist and pyaims wikth pixi:
+Otherwise, if you have installed pyanatomist and pyaims with pixi:
 ```
 pixi shell
 python twingame.py -c twin_config_hcp.json
