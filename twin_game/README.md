@@ -2,28 +2,28 @@
 
 ## Get started
 
-First, you need to have installed BrainVISA (see the [../README.md](../README.md) at the root of brainvisa_recipes):
-* either using apptainer with the developer installation: see <https://brainvisa.info/web/download.html>
-* or using pixi:
-First install pixi:
-```
-curl -fsSL https://pixi.sh/install.sh | bash
-```
-The, create the environnment containing pip and 
+First, you need to have installed pyanatomist and pyaims (see the [../README.md](../README.md) at the root of brainvisa_recipes).
 
 The following will work if the HCP dataset is in the directory /neurospin/dico/data/bv_databases/human/not_labeled/hcp, which is the case if you are running the software from the neurospin computer:
 
 If you have installed brainvisa using the ApptTainer way:
+* Either:
 ```
 bv python twingame.py -c twin_config_hcp.json
 ```
-Otherwise:
+* Or:
 ```
+bv bash
+python twingame.py -c twin_config_hcp.json
+```
+Otherwise, if you have installed pyanatomist and pyaims wikth pixi:
+```
+pixi shell
 python twingame.py -c twin_config_hcp.json
 ```
 
 
-## Miscellaneous
+## Miscellaneous (some developper comments)
 
 1 fenêtre
 panneau gauche: boutons
