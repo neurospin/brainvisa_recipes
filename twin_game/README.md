@@ -1,5 +1,9 @@
 # Twin game
 
+To win the game, you have to choose the correct pairs of twins, based on the morphology of the folds. It permits to get an intuition on what is dependent on genetics and what is dependent on neurodevelopment. Here is the screenshot of the game:
+
+![Screenshot](images/screenshot.png)
+
 ## Get started
 
 First, you need to have installed pyanatomist and pyaims (see the [../README.md](../README.md) at the root of brainvisa_recipes).
