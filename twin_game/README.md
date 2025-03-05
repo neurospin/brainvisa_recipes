@@ -2,7 +2,7 @@
 
 ## Get started
 
-First, you need to have installed BrainVISA (see the [README.md](../README.md) at the root of brainvisa_recipes):
+First, you need to have installed BrainVISA (see the [../README.md](../README.md) at the root of brainvisa_recipes):
 * either using apptainer with the developer installation: see <https://brainvisa.info/web/download.html>
 * or using pixi:
 First install pixi:
