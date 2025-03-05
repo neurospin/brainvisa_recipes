@@ -1,0 +1,26 @@
+{
+    "twin_number": 2,
+    "show_sulci": false,
+    "max_cache_subjects": 8,
+    "dataset": {
+        "directory": "/home/dr144257/data/archi-sulci",
+        "directory_bak": "/neurospin/dico/data/bv_databases/human/manually_labeled/archi",
+        "metadata": {
+            "center": "t1-1mm-1",
+            "graph_version": "3.3",
+            "sulci_recognition_session": "session1_manual"
+        },
+        "twins": {
+            "twins_00": ["001", "002"],
+            "twins_01": ["003", "004"],
+            "twins_02": ["005", "006"],
+            "twins_03": ["007", "008"],
+            "twins_04": ["009", "010"],
+            "twins_05": ["011", "012"],
+            "twins_06": ["013", "014"],
+            "twins_07": ["015", "016"],
+            "twins_08": ["017", "018"],
+            "twins_09": ["019", "020"]
+        }
+    }
+}
