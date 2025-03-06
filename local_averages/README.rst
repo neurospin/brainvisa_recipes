@@ -13,11 +13,24 @@ The 200-subjects averages will be plot on 2 columns, 1 row.
 
    bv bash
    cd notebooks
-   python3 local_averages.py -p path_to_regression_on_rs4842267_C.csv \
-                                                    -r CINGULATE. \
-                                                    -i L \
-                                                    -s IID \
-                                                    -e projection \
-                                                    -n 2 \
-                                                    -l 1 \
-                                                    -t 200 
+   python3 local_averages.py -p rs_example.csv \
+                             -r CINGULATE. \
+                             -i L \
+                             -s IID \
+                             -e projection \
+                             -n 2 \
+                             -l 1 \
+                             -t 200 
+
+with the rs_example.csv such as
+
+.. code-block:: shell
+
+   IID,projection 
+   2948423,-0.15536039923644362
+   3401792,-0.1347227381567912
+   4741853,-0.13361727207750745
+   3816649,-0.13024577289203867
+   1908139,-0.12334186090363967
+   3211681,-0.12114839219002949
+
