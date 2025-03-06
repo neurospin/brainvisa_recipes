@@ -13,7 +13,7 @@ The 200-subjects averages will be plot on 2 columns, 1 row.
 
    bv bash
    cd notebooks
-   python3 MOStest/Interpretation/Moving_average.py -p path_to_regression_on_rs4842267_C.csv \
+   python3 local_averages.py -p path_to_regression_on_rs4842267_C.csv \
                                                     -r CINGULATE. \
                                                     -i L \
                                                     -s IID \
