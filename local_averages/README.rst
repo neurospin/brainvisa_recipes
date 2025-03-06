@@ -34,3 +34,6 @@ with the rs_example.csv such as
    1908139,-0.12334186090363967
    3211681,-0.12114839219002949
 
+Ths program outputs  avrages as an Anaotmist window:
+
+.. image:: output_image.png
