@@ -286,8 +286,8 @@ class TwinGame(Qt.QMainWindow):
         check_icn = getattr(self, 'check_icon', None)
         if check_icn is None:
             mypath = osp.dirname(__file__)
-            check_icn = Qt.QIcon(osp.join(mypath, 'link_light.png'))
-            self.grip_pixmap = Qt.QPixmap(osp.join(mypath, 'grip.png'))
+            check_icn = Qt.QIcon(osp.join(mypath, 'images', 'link_light.png'))
+            self.grip_pixmap = Qt.QPixmap(osp.join(mypath, 'images', 'grip.png'))
 
         for sub in subjects:
             meta['subject'] = sub

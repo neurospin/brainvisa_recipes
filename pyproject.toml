@@ -8,6 +8,9 @@ version = "2025.0.0"
 dependencies = [
   "numpy",
   "pandas",
+  "matplotlib",
+  "plotly",
+  "umap-learn"
 ]
 requires-python = ">=3.11"
 authors = [
