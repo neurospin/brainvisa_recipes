@@ -1,0 +1,1758 @@
+{
+    "twin_number": 6,
+    "show_sulci": false,
+    "display_filter": {
+        "genre": "F",
+        "monozygote": true
+    },
+    "dataset": {
+        "directory": "/neurospin/dico/data/bv_databases/human/not_labeled/hcp",
+        "metadata": {
+            "center": "hcp",
+            "acquisition": "BL",
+            "graph_version": "3.1",
+            "sulci_recognition_session": "",
+            "under_ses": ""
+        },
+        "twins": {
+            "twin_0000": [
+                "100307",
+                "255639"
+            ],
+            "twin_0001": [
+                "100408",
+                "705341"
+            ],
+            "twin_0002": [
+                "102311",
+                "145834"
+            ],
+            "twin_0003": [
+                "102816",
+                "680957"
+            ],
+            "twin_0004": [
+                "103010",
+                "113316"
+            ],
+            "twin_0005": [
+                "103818",
+                "143325"
+            ],
+            "twin_0006": [
+                "104012",
+                "153732"
+            ],
+            "twin_0007": [
+                "104416",
+                "187345"
+            ],
+            "twin_0008": [
+                "105115",
+                "205826"
+            ],
+            "twin_0009": [
+                "106016",
+                "141422"
+            ],
+            "twin_0010": [
+                "107018",
+                "118023"
+            ],
+            "twin_0011": [
+                "107422",
+                "573451"
+            ],
+            "twin_0013": [
+                "111009",
+                "872158"
+            ],
+            "twin_0014": [
+                "111312",
+                "144226"
+            ],
+            "twin_0015": [
+                "112516",
+                "844961"
+            ],
+            "twin_0017": [
+                "113922",
+                "166438"
+            ],
+            "twin_0018": [
+                "115017",
+                "782561"
+            ],
+            "twin_0019": [
+                "115320",
+                "175439"
+            ],
+            "twin_0020": [
+                "115825",
+                "178243"
+            ],
+            "twin_0021": [
+                "116221",
+                "127226"
+            ],
+            "twin_0022": [
+                "116423",
+                "154532"
+            ],
+            "twin_0023": [
+                "116524",
+                "395958"
+            ],
+            "twin_0024": [
+                "116726",
+                "257845"
+            ],
+            "twin_0025": [
+                "117021",
+                "198047"
+            ],
+            "twin_0026": [
+                "118831",
+                "558657"
+            ],
+            "twin_0029": [
+                "124422",
+                "127731"
+            ],
+            "twin_0030": [
+                "125525",
+                "192439"
+            ],
+            "twin_0031": [
+                "126325",
+                "154431"
+            ],
+            "twin_0032": [
+                "126426",
+                "146735"
+            ],
+            "twin_0033": [
+                "128632",
+                "210617"
+            ],
+            "twin_0034": [
+                "128935",
+                "200311"
+            ],
+            "twin_0035": [
+                "129028",
+                "133625"
+            ],
+            "twin_0036": [
+                "129533",
+                "733548"
+            ],
+            "twin_0037": [
+                "129937",
+                "492754"
+            ],
+            "twin_0039": [
+                "130417",
+                "662551"
+            ],
+            "twin_0040": [
+                "130518",
+                "562345"
+            ],
+            "twin_0041": [
+                "130619",
+                "144731"
+            ],
+            "twin_0043": [
+                "131217",
+                "365343"
+            ],
+            "twin_0044": [
+                "131621",
+                "688569"
+            ],
+            "twin_0045": [
+                "131823",
+                "506234"
+            ],
+            "twin_0046": [
+                "132118",
+                "436845"
+            ],
+            "twin_0047": [
+                "133019",
+                "784565"
+            ],
+            "twin_0049": [
+                "134627",
+                "943862"
+            ],
+            "twin_0050": [
+                "134728",
+                "148436"
+            ],
+            "twin_0051": [
+                "135124",
+                "463040"
+            ],
+            "twin_0052": [
+                "135528",
+                "179548"
+            ],
+            "twin_0054": [
+                "137128",
+                "859671"
+            ],
+            "twin_0055": [
+                "137532",
+                "969476"
+            ],
+            "twin_0056": [
+                "139435",
+                "316835"
+            ],
+            "twin_0057": [
+                "139637",
+                "677968"
+            ],
+            "twin_0058": [
+                "139839",
+                "341834"
+            ],
+            "twin_0059": [
+                "143830",
+                "211922"
+            ],
+            "twin_0060": [
+                "144933",
+                "194443"
+            ],
+            "twin_0061": [
+                "145632",
+                "165638"
+            ],
+            "twin_0062": [
+                "146129",
+                "783462"
+            ],
+            "twin_0063": [
+                "146432",
+                "818859"
+            ],
+            "twin_0064": [
+                "146937",
+                "401422"
+            ],
+            "twin_0065": [
+                "148133",
+                "771354"
+            ],
+            "twin_0066": [
+                "148941",
+                "163129"
+            ],
+            "twin_0067": [
+                "149337",
+                "917255"
+            ],
+            "twin_0068": [
+                "149741",
+                "433839"
+            ],
+            "twin_0069": [
+                "150928",
+                "557857"
+            ],
+            "twin_0070": [
+                "151425",
+                "195445"
+            ],
+            "twin_0071": [
+                "151526",
+                "352132"
+            ],
+            "twin_0072": [
+                "153934",
+                "300719"
+            ],
+            "twin_0073": [
+                "154835",
+                "917558"
+            ],
+            "twin_0074": [
+                "156334",
+                "833249"
+            ],
+            "twin_0075": [
+                "159138",
+                "303624"
+            ],
+            "twin_0076": [
+                "159239",
+                "249947"
+            ],
+            "twin_0077": [
+                "159340",
+                "497865"
+            ],
+            "twin_0078": [
+                "159441",
+                "441939"
+            ],
+            "twin_0079": [
+                "162026",
+                "568963"
+            ],
+            "twin_0080": [
+                "164636",
+                "214524"
+            ],
+            "twin_0081": [
+                "165436",
+                "971160"
+            ],
+            "twin_0082": [
+                "167238",
+                "693461"
+            ],
+            "twin_0083": [
+                "168947",
+                "186848"
+            ],
+            "twin_0084": [
+                "169343",
+                "627549"
+            ],
+            "twin_0085": [
+                "169444",
+                "901442"
+            ],
+            "twin_0086": [
+                "169747",
+                "751550"
+            ],
+            "twin_0087": [
+                "171330",
+                "393550"
+            ],
+            "twin_0088": [
+                "172029",
+                "912447"
+            ],
+            "twin_0089": [
+                "172332",
+                "194140"
+            ],
+            "twin_0090": [
+                "172433",
+                "202719"
+            ],
+            "twin_0091": [
+                "172938",
+                "280739"
+            ],
+            "twin_0092": [
+                "174841",
+                "212823"
+            ],
+            "twin_0093": [
+                "176542",
+                "246133"
+            ],
+            "twin_0094": [
+                "177645",
+                "212419"
+            ],
+            "twin_0095": [
+                "178647",
+                "182436"
+            ],
+            "twin_0096": [
+                "179952",
+                "295146"
+            ],
+            "twin_0097": [
+                "180533",
+                "654552"
+            ],
+            "twin_0098": [
+                "181232",
+                "191841"
+            ],
+            "twin_0099": [
+                "182840",
+                "205119"
+            ],
+            "twin_0100": [
+                "183337",
+                "555348"
+            ],
+            "twin_0101": [
+                "185139",
+                "792564"
+            ],
+            "twin_0102": [
+                "185442",
+                "601127"
+            ],
+            "twin_0103": [
+                "185947",
+                "852455"
+            ],
+            "twin_0105": [
+                "186949",
+                "995174"
+            ],
+            "twin_0106": [
+                "187547",
+                "200109"
+            ],
+            "twin_0107": [
+                "189349",
+                "500222"
+            ],
+            "twin_0108": [
+                "191033",
+                "872764"
+            ],
+            "twin_0109": [
+                "195041",
+                "204521"
+            ],
+            "twin_0110": [
+                "196750",
+                "586460"
+            ],
+            "twin_0111": [
+                "196851",
+                "825553"
+            ],
+            "twin_0112": [
+                "198249",
+                "207426"
+            ],
+            "twin_0113": [
+                "198653",
+                "581450"
+            ],
+            "twin_0114": [
+                "199655",
+                "251833"
+            ],
+            "twin_0115": [
+                "200008",
+                "767464"
+            ],
+            "twin_0116": [
+                "200614",
+                "861456"
+            ],
+            "twin_0117": [
+                "209228",
+                "765864"
+            ],
+            "twin_0118": [
+                "214625",
+                "911849"
+            ],
+            "twin_0119": [
+                "231928",
+                "521331"
+            ],
+            "twin_0120": [
+                "233326",
+                "352738"
+            ],
+            "twin_0121": [
+                "248238",
+                "368753"
+            ],
+            "twin_0122": [
+                "263436",
+                "320826"
+            ],
+            "twin_0123": [
+                "287248",
+                "660951"
+            ],
+            "twin_0124": [
+                "297655",
+                "322224"
+            ],
+            "twin_0125": [
+                "299760",
+                "763557"
+            ],
+            "twin_0126": [
+                "304727",
+                "856463"
+            ],
+            "twin_0127": [
+                "308129",
+                "749058"
+            ],
+            "twin_0128": [
+                "318637",
+                "926862"
+            ],
+            "twin_0129": [
+                "321323",
+                "744553"
+            ],
+            "twin_0130": [
+                "380036",
+                "385450"
+            ],
+            "twin_0131": [
+                "385046",
+                "878877"
+            ],
+            "twin_0132": [
+                "391748",
+                "731140"
+            ],
+            "twin_0133": [
+                "395756",
+                "644246"
+            ],
+            "twin_0134": [
+                "397760",
+                "467351"
+            ],
+            "twin_0135": [
+                "397861",
+                "512835"
+            ],
+            "twin_0136": [
+                "412528",
+                "951457"
+            ],
+            "twin_0137": [
+                "414229",
+                "453441"
+            ],
+            "twin_0138": [
+                "461743",
+                "519647"
+            ],
+            "twin_0139": [
+                "469961",
+                "933253"
+            ],
+            "twin_0140": [
+                "547046",
+                "901139"
+            ],
+            "twin_0141": [
+                "552241",
+                "973770"
+            ],
+            "twin_0143": [
+                "578158",
+                "888678"
+            ],
+            "twin_0144": [
+                "675661",
+                "723141"
+            ],
+            "twin_0145": [
+                "680452",
+                "788674"
+            ],
+            "twin_0146": [
+                "709551",
+                "715647"
+            ],
+            "twin_0148": [
+                "757764",
+                "905147"
+            ],
+            "twin_0149": [
+                "100610",
+                "118225"
+            ],
+            "twin_0151": [
+                "103515",
+                "140420"
+            ],
+            "twin_0152": [
+                "105014",
+                "112819"
+            ],
+            "twin_0153": [
+                "106521",
+                "715950"
+            ],
+            "twin_0154": [
+                "106824",
+                "886674"
+            ],
+            "twin_0155": [
+                "108020",
+                "728454"
+            ],
+            "twin_0156": [
+                "108323",
+                "140117"
+            ],
+            "twin_0157": [
+                "109123",
+                "111514"
+            ],
+            "twin_0158": [
+                "111211",
+                "171734"
+            ],
+            "twin_0159": [
+                "111413",
+                "120111"
+            ],
+            "twin_0160": [
+                "114217",
+                "203923"
+            ],
+            "twin_0162": [
+                "119833",
+                "585862"
+            ],
+            "twin_0163": [
+                "120212",
+                "665254"
+            ],
+            "twin_0164": [
+                "122822",
+                "884064"
+            ],
+            "twin_0165": [
+                "123521",
+                "611938"
+            ],
+            "twin_0166": [
+                "123925",
+                "549757"
+            ],
+            "twin_0168": [
+                "124826",
+                "562446"
+            ],
+            "twin_0170": [
+                "126931",
+                "745555"
+            ],
+            "twin_0171": [
+                "127832",
+                "137431"
+            ],
+            "twin_0172": [
+                "130114",
+                "155938"
+            ],
+            "twin_0173": [
+                "131722",
+                "389357"
+            ],
+            "twin_0174": [
+                "134021",
+                "953764"
+            ],
+            "twin_0175": [
+                "134829",
+                "585256"
+            ],
+            "twin_0176": [
+                "141826",
+                "779370"
+            ],
+            "twin_0177": [
+                "143224",
+                "255740"
+            ],
+            "twin_0178": [
+                "143426",
+                "929464"
+            ],
+            "twin_0180": [
+                "150423",
+                "826353"
+            ],
+            "twin_0182": [
+                "151930",
+                "325129"
+            ],
+            "twin_0183": [
+                "156435",
+                "299154"
+            ],
+            "twin_0184": [
+                "157336",
+                "429040"
+            ],
+            "twin_0185": [
+                "158136",
+                "898176"
+            ],
+            "twin_0186": [
+                "161327",
+                "390645"
+            ],
+            "twin_0187": [
+                "162935",
+                "283543"
+            ],
+            "twin_0188": [
+                "163432",
+                "702133"
+            ],
+            "twin_0189": [
+                "164131",
+                "173334"
+            ],
+            "twin_0190": [
+                "167036",
+                "770352"
+            ],
+            "twin_0191": [
+                "167440",
+                "381038"
+            ],
+            "twin_0192": [
+                "168341",
+                "175540"
+            ],
+            "twin_0194": [
+                "171128",
+                "202820"
+            ],
+            "twin_0195": [
+                "171633",
+                "172130"
+            ],
+            "twin_0196": [
+                "175237",
+                "406836"
+            ],
+            "twin_0197": [
+                "177140",
+                "360030"
+            ],
+            "twin_0198": [
+                "178142",
+                "899885"
+            ],
+            "twin_0200": [
+                "182739",
+                "239136"
+            ],
+            "twin_0203": [
+                "191336",
+                "573249"
+            ],
+            "twin_0204": [
+                "191437",
+                "559053"
+            ],
+            "twin_0205": [
+                "192540",
+                "894673"
+            ],
+            "twin_0206": [
+                "192641",
+                "825048"
+            ],
+            "twin_0207": [
+                "193845",
+                "724446"
+            ],
+            "twin_0208": [
+                "197348",
+                "205220"
+            ],
+            "twin_0210": [
+                "199251",
+                "896778"
+            ],
+            "twin_0211": [
+                "200210",
+                "201515"
+            ],
+            "twin_0213": [
+                "203418",
+                "958976"
+            ],
+            "twin_0214": [
+                "209329",
+                "579867"
+            ],
+            "twin_0216": [
+                "221319",
+                "541943"
+            ],
+            "twin_0217": [
+                "248339",
+                "891667"
+            ],
+            "twin_0218": [
+                "289555",
+                "473952"
+            ],
+            "twin_0219": [
+                "310621",
+                "413934"
+            ],
+            "twin_0220": [
+                "330324",
+                "671855"
+            ],
+            "twin_0221": [
+                "353740",
+                "735148"
+            ],
+            "twin_0222": [
+                "358144",
+                "923755"
+            ],
+            "twin_0223": [
+                "362034",
+                "804646"
+            ],
+            "twin_0226": [
+                "393247",
+                "572045"
+            ],
+            "twin_0227": [
+                "462139",
+                "827052"
+            ],
+            "twin_0228": [
+                "510225",
+                "996782"
+            ],
+            "twin_0229": [
+                "525541",
+                "617748"
+            ],
+            "twin_0230": [
+                "548250",
+                "720337"
+            ],
+            "twin_0231": [
+                "550439",
+                "966975"
+            ],
+            "twin_0232": [
+                "552544",
+                "887373"
+            ],
+            "twin_0233": [
+                "561949",
+                "664757"
+            ],
+            "twin_0234": [
+                "638049",
+                "732243"
+            ],
+            "twin_0235": [
+                "656657",
+                "686969"
+            ],
+            "twin_0236": [
+                "690152",
+                "910241"
+            ],
+            "twin_0237": [
+                "698168",
+                "832651"
+            ],
+            "twin_0238": [
+                "707749",
+                "820745"
+            ],
+            "twin_0239": [
+                "725751",
+                "814649"
+            ],
+            "twin_0240": [
+                "789373",
+                "871762"
+            ],
+            "twin_0241": [
+                "878776",
+                "927359"
+            ],
+            "twin_0242": [
+                "885975",
+                "984472"
+            ]
+        },
+        "twin_meta": {
+            "twin_0000": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0001": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0002": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0003": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0004": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0005": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0006": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0007": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0008": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0009": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0010": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0011": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0013": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0014": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0015": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0017": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0018": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0019": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0020": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0021": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0022": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0023": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0024": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0025": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0026": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0029": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0030": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0031": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0032": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0033": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0034": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0035": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0036": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0037": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0039": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0040": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0041": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0043": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0044": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0045": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0046": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0047": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0049": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0050": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0051": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0052": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0054": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0055": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0056": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0057": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0058": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0059": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0060": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0061": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0062": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0063": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0064": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0065": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0066": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0067": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0068": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0069": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0070": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0071": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0072": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0073": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0074": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0075": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0076": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0077": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0078": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0079": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0080": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0081": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0082": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0083": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0084": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0085": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0086": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0087": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0088": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0089": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0090": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0091": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0092": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0093": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0094": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0095": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0096": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0097": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0098": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0099": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0100": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0101": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0102": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0103": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0105": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0106": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0107": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0108": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0109": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0110": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0111": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0112": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0113": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0114": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0115": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0116": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0117": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0118": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0119": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0120": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0121": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0122": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0123": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0124": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0125": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0126": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0127": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0128": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0129": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0130": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0131": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0132": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0133": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0134": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0135": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0136": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0137": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0138": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0139": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0140": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0141": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0143": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0144": {
+                "monozygote": true,
+                "genre": "M"
+            },
+            "twin_0145": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0146": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0148": {
+                "monozygote": true,
+                "genre": "F"
+            },
+            "twin_0149": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0151": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0152": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0153": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0154": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0155": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0156": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0157": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0158": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0159": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0160": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0162": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0163": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0164": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0165": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0166": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0168": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0170": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0171": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0172": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0173": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0174": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0175": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0176": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0177": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0178": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0180": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0182": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0183": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0184": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0185": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0186": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0187": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0188": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0189": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0190": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0191": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0192": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0194": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0195": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0196": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0197": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0198": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0200": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0203": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0204": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0205": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0206": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0207": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0208": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0210": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0211": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0213": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0214": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0216": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0217": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0218": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0219": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0220": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0221": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0222": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0223": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0226": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0227": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0228": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0229": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0230": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0231": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0232": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0233": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0234": {
+                "monozygote": false,
+                "genre": "F"
+            },
+            "twin_0235": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0236": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0237": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0238": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0239": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0240": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0241": {
+                "monozygote": false,
+                "genre": "M"
+            },
+            "twin_0242": {
+                "monozygote": false,
+                "genre": "F"
+            }
+        }
+    }
+}
