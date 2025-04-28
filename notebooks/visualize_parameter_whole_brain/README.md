@@ -1,3 +1,5 @@
+# Steps to perform before
+
 You first have to install SPAM models in brainvisa.
 
 For this, you should open brainvisa:
