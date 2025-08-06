@@ -55,12 +55,12 @@ def create_grid(image_files, n_cols, out_path, title=None, subject_names=None):
 
 base_dir = (
     '/neurospin/dico/rmenasria/Runs/03_main/Input/mnt/'
-    'derivatives/soft-brainvisa_ses-baselineYear1Arm1_ver-5.2_morphologist'
+    'soft-brainvisa_ses-baselineYear1Arm1_ver-5.2_morphologist'
 )
 SUBJECTS_TEST = ['sub-NDARINVZXPAWB32', 'sub-NDARINV0A6WVRZY']
 HEMISPHERE = 'R'
-#SULCUS_NAME = 'S.T.s._right'  # Trop haut dans la nomenclature, donc colorie trop de sillons
-SULCUS_NAME = 'F.C.M.post._right'  
+SULCUS_NAME = 'S.T.s._right'  # Trop haut dans la nomenclature, donc colorie trop de sillons
+#SULCUS_NAME = 'F.C.M.post._right'  
 
 CAMERA_PARAMS_FCM = {
     'view_quaternion': [-0.26836308836937, -0.323044091463089, -0.315022945404053, -0.851107776165009],
@@ -202,7 +202,7 @@ SUBJECTS_FULLTERMS_CLASSIF_27_ABCD_FCM = [
 
 
 # here select the list 
-SUBJECTS = SUBJECTS_PREMA_CLASSIF_27_ABCD_FCM
+SUBJECTS = SUBJECTS_PREMA_CLASSIF_27_ABCD_STS
 
 
 
@@ -211,7 +211,7 @@ a = ana.Anatomist()
 windows = []
 w = a.createWindow('3D')
 windows.append(w)
-w.assignReferential(a.centralRef)
+#w.assignReferential(a.centralRef)
 
 if SULCUS_NAME == 'F.C.M.post._right':
         CAMERA_PARAMS = CAMERA_PARAMS_FCM
@@ -304,7 +304,7 @@ for subj in SUBJECTS:
 
     if snapshot:
 
-        save_dir = "/neurospin/dico/rmenasria/Runs/03_main/Output/Figures/anat_snapshots/prema_27_ABCD"
+        save_dir = "/neurospin/dico/rmenasria/Runs/03_main/Output/Figures/anat_snapshots/test"
         w.setHasCursor(0)
         fname = f"{subj}_{SULCUS_NAME}.png"
         img_path = os.path.join(save_dir, fname)
@@ -317,7 +317,7 @@ for subj in SUBJECTS:
     #Remove objects from the window
     w.removeObjects([mesh, graph, nomenclature])
 
-grid_dir = "/neurospin/dico/rmenasria/Runs/03_main/Output/Figures/anat_snapshots/prema_27_ABCD"
+grid_dir = "/neurospin/dico/rmenasria/Runs/03_main/Output/Figures/anat_snapshots/test"
 create_grid(
     image_files=[
         os.path.join(grid_dir, f"{subj}_{SULCUS_NAME}.png") for subj in SUBJECTS
