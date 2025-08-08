@@ -1,3 +1,10 @@
+"""
+view_sulcal_region_in_skeleton.py:
+Produces in native spaces:
+- the mesh of the cortical skeleton encompassed in the sulcal region
+- the mesh of its negative (the cortical skeleton outside the sulcal region)
+It visualizes both meshes together with the white mesh
+"""
 from soma.qt_gui.qt_backend import Qt
 import anatomist.api as ana
 from soma import aims
@@ -5,7 +12,7 @@ from soma import aimsalgo
 
 a = ana.Anatomist()
 
-# Variables
+# Variable definition
 _SUBJECT = "100206"
 _REGION = "S.C.-sylv."
 _SIDE = "R"
@@ -27,7 +34,18 @@ trm_raw_to_icbm = aims.read(trm_raw_to_icbm_file)
 white_mesh_a = a.loadObject(white_mesh_file, hidden=False)
 
 
-def mesh_and_merge(input_volume):
+def mesh_and_merge(input_volume: aims.Volume_S16) \
+        -> aims.AimsTimeSurface_3_VOID:
+    """Creates a unique mesh from an input volume.
+    
+    Parameters
+    ----------
+    input_volume: aims.Volume, volume to mesh
+    
+    Returns
+    -------
+    mesh_concat: aims.AimsTimeSurface_3_VOID, concatenated mesh
+    """
     # Creates a mesh from the input volume
     mesher = aimsalgo.Mesher()
     mesher.setSmoothing(mesher.LOWPASS, 100, 0.4)
@@ -44,12 +62,35 @@ def mesh_and_merge(input_volume):
     for key in keys[1:]:
         for mesh_add in mesh[key]:
             aims.SurfaceManip.meshMerge(mesh_concat, mesh_add)
-    aims.write(mesh_concat, "/tmp/mesh_concat.mesh")
 
     return mesh_concat
 
 
-def compute_meshes_sulcal_region(skeleton_raw, mask_icbm, trm_raw_to_icbm):
+def compute_meshes_sulcal_region(skeleton_raw: aims.Volume_S16,
+                                 mask_icbm: aims.Volume_S16,
+                                 trm_raw_to_icbm: aims.AffineTransformation3d)\
+        -> tuple:
+    """Returns two meshes: the one of skeleton inside the sulcal region,
+    and the one outside the sulcal region.
+
+    The meshes are computed in the native space of the subject.
+    
+    Parameters
+    ----------
+    skeleton_raw: aims.Volume_S16
+        cortical skeleton in native space
+    mask_icbm: aims.Volume_S16
+        binary mask defining the sulcal region in ICBM2009c space
+    trm_raw_to_icbm: aims.AffineTransformation3d
+        transform from the native to the ICBM2009c space
+    
+    Returns
+    -------
+    mesh_masked: aims.AimsTimeSurface_3_VOID
+        mesh of the cortical skeleton of the sulcal region
+    mesh_negative_masked: aims.AimsTimeSurface_3_VOID
+        mesh of the cortical skeleton outside the sulcal region
+    """
     # We create a volume mask_raw filled with 0 of the same size 
     # and in the same referential as skeleton_raw
     hdr = skeleton_raw.header()
