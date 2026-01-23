@@ -192,14 +192,6 @@ def visualize_whole_hemisphere(view_quaternion, side, i):
     dic_window[f"win{i}"].camera(view_quaternion=view_quaternion)
 
     # 0;1;0.579487;1;0.992308;1#0;1;0.246154;0.822222;0.630769;0.311111;1;0#0;1;0.320513;0.0888889;1;0#0.5;1
- 
-def visualize_whole(res, side, start):
-
-    set_color_property(res, side, statistic)
-    visualize_whole_hemisphere(middle_view if side == "L" else side_view, side, start+0)
-    visualize_whole_hemisphere(top_view, side, start+1)
-    visualize_whole_hemisphere(bottom_view, side, start+2)
-    visualize_whole_hemisphere(side_view if side == "L" else middle_view, side, start+3)
 
 def visualize_whole(res, side, start):
     set_color_property(res, side, statistic)
