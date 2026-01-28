@@ -202,7 +202,11 @@ def visualize_whole(res, side, start):
 
 
 Rspam_model = "/casa/host/build/share/brainvisa-share-5.2/models/models_2008/descriptive_models/segments/global_registered_spam_right/meshes/Rspam_model_meshes_1.arg"
+if not os.path.exists(Rspam_model):
+    Rspam_model = "/volatile/ad279118/brainvisa/.pixi/envs/default/share/brainvisa-share-6.0/models/models_2008/descriptive_models/segments/global_registered_spam_right/meshes/Rspam_model_meshes_1.arg"
 Lspam_model = "/casa/host/build/share/brainvisa-share-5.2/models/models_2008/descriptive_models/segments/global_registered_spam_left/meshes/Lspam_model_meshes_1.arg"
+if not os.path.exists(Lspam_model):
+    Lspam_model ="/volatile/ad279118/brainvisa/.pixi/envs/default/share/brainvisa-share-6.0/models/models_2008/descriptive_models/segments/global_registered_spam_left/meshes/Lspam_model_meshes_1.arg"
 
 middle_view = [0.5, -0.5, -0.5, 0.5]
 side_view = [0.5, 0.5, 0.5, 0.5]
@@ -228,6 +232,11 @@ def main():
     # -- Load data --
     with open(args.region_to_sulci) as f:
         filtered_region_to_sulci = json.load(f)
+
+    filtered_region_to_sulci = {
+        k.replace('.', ''): v
+        for k, v in filtered_region_to_sulci.items()
+    }
 
     genes_rslt = pd.read_csv(args.database, sep='\t')
     statistic = args.statistic
