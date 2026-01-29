@@ -4,7 +4,10 @@ from soma.qt_gui.qt_backend import Qt
 
 a = ana.Anatomist()
 
+from PIL import Image
+
 from soma import aims
+import paletteViewer
 import numpy as np
 import pandas as pd
 import glob
@@ -26,7 +29,7 @@ def build_gradient(pal):
     npal[:, 0, 0, 0, :3] = npal[:, 0, 0, 0, :3][:, ::-1]
     pal.update()
 
-def create_grid(image_files, n_cols, out_path, title=None):
+"""def create_grid(image_files, n_cols, out_path, title=None, palette_path=None, vmin=None, vmax=None):
     # load all images
     imgs = [Image.open(f) for f in image_files]
     # calculate max width and height
@@ -61,6 +64,85 @@ def create_grid(image_files, n_cols, out_path, title=None):
         draw.text((x, 5), title, fill=(0, 0, 0), font=font)
 
     grid.save(out_path)
+    print(f"Snapshot of the block available at {out_path}")"""
+
+def create_grid(image_files, n_cols, out_path, title=None,
+                palette_path=None, vmin=None, vmax=None):
+
+    imgs = [Image.open(f) for f in image_files]
+    w = max(im.width for im in imgs)
+    h = max(im.height for im in imgs)
+    n_rows = (len(imgs) + n_cols - 1) // n_cols
+
+    font_size = 36
+    font = ImageFont.truetype("DejaVuSans.ttf", font_size)
+
+    title_h = 0
+    if title:
+        title_h = font.getbbox(title)[3] + 15
+
+    # ---- Palette handling ----
+    palette_h = 0
+    palette_margin = 20
+    if palette_path:
+        pal_img = Image.open(palette_path)
+        palette_h = pal_img.height + 2 * font_size + palette_margin
+
+    # ---- Create final canvas ----
+    grid = Image.new(
+        'RGB',
+        (n_cols * w, title_h + n_rows * h + palette_h),
+        (255, 255, 255)
+    )
+
+    draw = ImageDraw.Draw(grid)
+
+    # ---- Paste grid images ----
+    for idx, im in enumerate(imgs):
+        i, j = divmod(idx, n_cols)
+        x0 = j * w
+        y0 = title_h + i * h
+        grid.paste(im, (x0, y0))
+
+    # ---- Title ----
+    if title:
+        bbox = draw.textbbox((0, 0), title, font=font)
+        text_w = bbox[2] - bbox[0]
+        draw.text(
+            ((grid.width - text_w) // 2, 5),
+            title,
+            fill=(0, 0, 0),
+            font=font
+        )
+
+    # ---- Palette legend ----
+    if palette_path:
+        pal_w, pal_h = pal_img.size
+        x_pal = (grid.width - pal_w) // 2
+        y_pal = title_h + n_rows * h + palette_margin
+
+        grid.paste(pal_img, (x_pal, y_pal))
+
+        # min / max labels
+        if vmin is not None:
+            draw.text(
+                (x_pal - 25, y_pal + pal_h + 5),
+                f"{vmin:.1f}",
+                fill=(0, 0, 0),
+                font=font
+            )
+
+        if vmax is not None:
+            text = f"{vmax:.1f}"
+            bbox = draw.textbbox((0, 0), text, font=font)
+            draw.text(
+                (x_pal + pal_w - bbox[2] + 25, y_pal + pal_h + 5),
+                text,
+                fill=(0, 0, 0),
+                font=font
+            )
+
+    grid.save(out_path)
     print(f"Snapshot of the block available at {out_path}")
 
 def region_to_column(region, side):
@@ -73,7 +155,7 @@ MNI_ICBM152 = "envs/default/share/disco-6.0/disco_templates_hbp_morpho/icbm152/m
 SIDES = ["L", "R"]
 REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
 STATISTIC = "z-score"
-GENE = "ENSG00000134250"
+GENE = "ENSG00000186868"
 SNAPSHOT = True
 SAVE_DIR = "/volatile/ad279118/2026_Nature/images/gene_map"
 VERBOSE = False
@@ -100,7 +182,14 @@ dic_window = {}
 dic_tex = {}
 image_files= []
 
+global_min = np.inf
+global_max = -np.inf
+
 block = a.createWindowsBlock(2)
+pal = a.createPalette('BR-palette')
+pal.header()['palette_gradients'] = "0;0.0877193;0.197931;0.197368;0.573103;1;0.764618;1;1;0.385965#0;0;0.242069;0.912281;0.598621;0.872807;0.898621;0.0789474;1;0#0;0.649123;0.590345;0.381579;1;0.0789474#0.5;1"
+build_gradient(pal)
+
 
 for SIDE in SIDES:
     dic_path[f"list_1mm_mask_{SIDE}"] = glob.glob(f"{MASK_DIR}/*/{SIDE}mask_skeleton_1mm.nii.gz")
@@ -182,11 +271,22 @@ for SIDE in SIDES:
         print("Vertices with at least one region:",
             np.sum(value_count > 0), "/", n_vertices)
 
+    tex_vals = np.asarray(dic_tex[f"tex_{SIDE}"][0])
+    valid_vals = tex_vals[tex_vals > 0]
+
+    if valid_vals.size > 0:
+        global_min = min(global_min, valid_vals.min())
+        global_max = max(global_max, valid_vals.max())
+
     middle_view = [0.5, -0.5, -0.5, 0.5]
     side_view = [0.5, 0.5, 0.5, 0.5]
 
     dic_obj[f"tex_obj_{SIDE}"] = a.toAObject(dic_tex[f"tex_{SIDE}"])
     dic_obj[f"fusion_{SIDE}"] = a.fusionObjects([dic_obj[f"tex_obj_{SIDE}"], dic_obj[f"mni_icbm152_{SIDE}mesh_obj"]], "FusionTexSurfMethod")
+    dic_obj[f"fusion_{SIDE}"].setPalette('BR-palette', 
+                                          minVal=0, 
+                                          absoluteMode=True)
+    a.setMaterial(dic_obj[f"fusion_{SIDE}"], lighting=0)
     dic_window[f"win_{SIDE}_1"].addObjects(dic_obj[f"fusion_{SIDE}"])
     dic_window[f"win_{SIDE}_1"].camera(view_quaternion=middle_view if SIDE == "L" else side_view)
     dic_window[f"win_{SIDE}_2"].addObjects(dic_obj[f"fusion_{SIDE}"])
@@ -195,6 +295,10 @@ for SIDE in SIDES:
     if SNAPSHOT:
         if not os.path.exists(SAVE_DIR):
             print(SAVE_DIR, "doesn't exist ! Check your directory.")
+        
+        path_palette = os.path.join(SAVE_DIR, f"{GENE}_pal.jpg")
+        pal_im = dic_obj[f"fusion_{SIDE}"].palette().toQImage(256, 32)
+        pal_im.save(path_palette)
 
         dic_window[f'win_{SIDE}_1'].setHasCursor(0)
         gene_fname1 = f"{GENE}_{side}_view_1.png"
@@ -208,6 +312,9 @@ for SIDE in SIDES:
         dic_window[f'win_{SIDE}_2'].snapshot(gene_img_path2, width=1250, height=900)
         image_files.append(gene_img_path2)
 
-create_grid(image_files,2,f"{SAVE_DIR}/grid_{GENE}.png", title=GENE)
+if SNAPSHOT:
+    create_grid(image_files,2,f"{SAVE_DIR}/grid_{GENE}.png", title=GENE, palette_path=path_palette,
+    vmin=int(0),
+    vmax=global_max)
 
-Qt.QApplication.instance().exec_()
+#Qt.QApplication.instance().exec_()
