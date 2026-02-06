@@ -170,14 +170,14 @@ def csv_to_region_value_dic(REGION_VALUES_CSV):
     return region_value_dict
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
-#REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_stats_NOPCA_ABCD_All.tsv"
-REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
+REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_stats_NOPCA_ABCD_All.tsv"
+#REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
 REGION_VALUES_CSV = "/home/ad279118/tmp1/all/meta_gencorr_bip_3PCs_summary.csv"
 STATISTIC = "ZSTAT"
 GENE = "ENSG00000186868"
 
 SAVE_DIR = "/neurospin/dico/adufournet/2026_Nature/images/gene_map"
-SNAPSHOT = False
+SNAPSHOT = True
 VERBOSE = True
 TITLE = GENE
 MINVAL = 0
@@ -331,7 +331,7 @@ def main():
             nan_mask = np.isnan(tex_vals)
 
             if nan_mask.any():
-                fill_value = 1.1*MAXVAL if MAXVAL is not None else 1.1*global_max
+                fill_value = 1.2*MAXVAL if MAXVAL is not None else 1.2*global_max
                 tex_vals[nan_mask] = fill_value
 
             # Copy values back into the AIMS texture
@@ -374,7 +374,7 @@ def main():
                 image_files.append(gene_img_path2)
 
         if SNAPSHOT:
-            create_grid(image_files,2,f"{SAVE_DIR}/UKB_{GENE}.png",  #f"{SAVE_DIR}/ABCD_all_{GENE}.png", 
+            create_grid(image_files,2,f"{SAVE_DIR}/ABCD_all_{GENE}.png",  #f"{SAVE_DIR}/UKB_{GENE}.png", 
                         title=GENE, #GENE
                         palette_path=path_palette,
                         vmin= MINVAL if MINVAL is not None else global_min,
