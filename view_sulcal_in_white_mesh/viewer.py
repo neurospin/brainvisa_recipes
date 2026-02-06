@@ -127,7 +127,18 @@ def create_grid(image_files, n_cols, out_path, title=None,
             text = f"{vmax:.1f}"
             bbox = draw.textbbox((0, 0), text, font=font)
             draw.text(
-                (x_pal + pal_w - bbox[2] + 25, y_pal + pal_h + 5),
+                (x_pal + pal_w - bbox[2] - 25, y_pal + pal_h + 5),
+                text,
+                fill=(0, 0, 0),
+                font=font
+            )
+
+        nan = True
+        if nan is not None:
+            text = f"nan"
+            bbox = draw.textbbox((0, 0), text, font=font)
+            draw.text(
+                (x_pal + pal_w - bbox[2] + 55, y_pal + pal_h + 5),
                 text,
                 fill=(0, 0, 0),
                 font=font
@@ -166,7 +177,7 @@ STATISTIC = "ZSTAT"
 GENE = "ENSG00000186868"
 
 SAVE_DIR = "/neurospin/dico/adufournet/2026_Nature/images/gene_map"
-SNAPSHOT = True
+SNAPSHOT = False
 VERBOSE = True
 TITLE = GENE
 MINVAL = 0
@@ -320,7 +331,7 @@ def main():
             nan_mask = np.isnan(tex_vals)
 
             if nan_mask.any():
-                fill_value = MAXVAL+0.2 if MAXVAL is not None else global_max + 0.2
+                fill_value = 1.1*MAXVAL if MAXVAL is not None else 1.1*global_max
                 tex_vals[nan_mask] = fill_value
 
             # Copy values back into the AIMS texture
@@ -334,7 +345,7 @@ def main():
             dic_obj[f"fusion_{SIDE}"] = a.fusionObjects([dic_obj[f"tex_obj_{SIDE}"], dic_obj[f"mni_icbm152_{SIDE}mesh_obj"]], "FusionTexSurfMethod")
             dic_obj[f"fusion_{SIDE}"].setPalette('BR-palette', 
                                                 minVal=MINVAL if MINVAL is not None else None, 
-                                                maxVal=MAXVAL+0.1 if MAXVAL is not None else global_max + 0.1,
+                                                maxVal=1.01*MAXVAL if MAXVAL is not None else 1.01*global_max,
                                                 absoluteMode=True)
             a.setMaterial(dic_obj[f"fusion_{SIDE}"], lighting=0)
             dic_window[f"win_{SIDE}_1"].addObjects(dic_obj[f"fusion_{SIDE}"])
@@ -364,7 +375,7 @@ def main():
 
         if SNAPSHOT:
             create_grid(image_files,2,f"{SAVE_DIR}/UKB_{GENE}.png",  #f"{SAVE_DIR}/ABCD_all_{GENE}.png", 
-                        title=TITLE, #GENE
+                        title=GENE, #GENE
                         palette_path=path_palette,
                         vmin= MINVAL if MINVAL is not None else global_min,
                         vmax= MAXVAL if MAXVAL is not None else global_max)
