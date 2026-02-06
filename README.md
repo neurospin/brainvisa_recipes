@@ -2,10 +2,7 @@
 
 # Get started
 
-You first have to install pyanatomist and pyaims. You can do it in two ways, either with the contained AppTainer or using pixi:
-
-## The AppTainer way
-Installation: you have to install the whole BrainVISA container. Please follow the instructions to download and install the **developper installation** given in <https://brainvisa.info/web/download.html>.
+You first have to install pyanatomist and pyaims. You can do this using pixi:
 
 ## The pixi way
 
@@ -16,7 +13,7 @@ curl -fsSL https://pixi.sh/install.sh | bash
 source ~/.bashrc
 ```
 
-You then create a pixi environment (we place here this environment in the directory env_pixi):
+You then create a pixi environment (we place here this environment in the directory env_pixi) that contains anatomist:
 ```
 mkdir env_pixi
 cd env_pixi
