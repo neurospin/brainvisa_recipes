@@ -127,13 +127,13 @@ def create_grid(image_files, n_cols, out_path, title=None,
             text = f"{vmax:.1f}"
             bbox = draw.textbbox((0, 0), text, font=font)
             draw.text(
-                (x_pal + pal_w - bbox[2] - 25, y_pal + pal_h + 5),
+                (x_pal + pal_w - bbox[2] +15, y_pal + pal_h + 5),
                 text,
                 fill=(0, 0, 0),
                 font=font
             )
 
-        nan = True
+        nan = None
         if nan is not None:
             text = f"nan"
             bbox = draw.textbbox((0, 0), text, font=font)
@@ -170,15 +170,16 @@ def csv_to_region_value_dic(REGION_VALUES_CSV):
     return region_value_dict
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
-REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_stats_NOPCA_ABCD_All.tsv"
-#REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
-REGION_VALUES_CSV = "/home/ad279118/tmp1/all/meta_gencorr_bip_3PCs_summary.csv"
+#REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_stats_NOPCA_ABCD_All.tsv"
+REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
+#REGION_VALUES_CSV = "/home/ad279118/tmp1/all/meta_gencorr_bip_3PCs_summary.csv"
 STATISTIC = "ZSTAT"
 GENE = "ENSG00000186868"
 
 SAVE_DIR = "/neurospin/dico/adufournet/2026_Nature/images/gene_map"
+BASE = "UKB_3D"
 SNAPSHOT = True
-VERBOSE = True
+VERBOSE = False
 TITLE = GENE
 MINVAL = 0
 MAXVAL = None
@@ -193,7 +194,8 @@ mni_icbm152_mesh_path = aims.carto.Paths.findResourceFile(MNI_ICBM152+"default_a
 MASK_DIR = "/neurospin/dico/cmendoza/Runs/17_PhD_2026/Output/mask_skeleton"
 SIDES = ["L", "R"]
 
-list_gene = ["ENSG00000256762", "ENSG00000186868", "ENSG00000120088", "ENSG00000100592", "ENSG00000175745", "ENSG00000260456", "ENSG00000135638", "ENSG00000128573"]
+list_gene = ["ENSG00000124788", "ENSG00000204842", "ENSG00000066427", "ENSG00000163635","ENSG00000256762", "ENSG00000186868", "ENSG00000120088", "ENSG00000100592", "ENSG00000175745", "ENSG00000260456", "ENSG00000135638", "ENSG00000128573"]
+#list_gene = [ "ENSG00000175745"]
 
 def main():
     for GENE in list_gene:
@@ -331,7 +333,7 @@ def main():
             nan_mask = np.isnan(tex_vals)
 
             if nan_mask.any():
-                fill_value = 1.2*MAXVAL if MAXVAL is not None else 1.2*global_max
+                fill_value = 1.02*MAXVAL if MAXVAL is not None else 1.02*global_max
                 tex_vals[nan_mask] = fill_value
 
             # Copy values back into the AIMS texture
@@ -342,12 +344,23 @@ def main():
             side_view = [0.5, 0.5, 0.5, 0.5]
 
             dic_obj[f"tex_obj_{SIDE}"] = a.toAObject(dic_tex[f"tex_{SIDE}"])
+            a.execute("TexturingParams", objects=[dic_obj[f"tex_obj_{SIDE}"]], interpolation="rgb")
             dic_obj[f"fusion_{SIDE}"] = a.fusionObjects([dic_obj[f"tex_obj_{SIDE}"], dic_obj[f"mni_icbm152_{SIDE}mesh_obj"]], "FusionTexSurfMethod")
             dic_obj[f"fusion_{SIDE}"].setPalette('BR-palette', 
                                                 minVal=MINVAL if MINVAL is not None else None, 
                                                 maxVal=1.01*MAXVAL if MAXVAL is not None else 1.01*global_max,
                                                 absoluteMode=True)
-            a.setMaterial(dic_obj[f"fusion_{SIDE}"], lighting=0)
+            #a.setMaterial(dic_obj[f"fusion_{SIDE}"] , lighting=0)
+            a.setMaterial(
+                dic_obj[f"fusion_{SIDE}"],
+                lighting=1,
+                ambient=[0.75, 0.75, 0.75, 1.0],
+                diffuse=[0.25, 0.25, 0.25, 1.0],
+                emission=[0.5, 0.5, 0.5, 1.0],
+                specular=[0.0, 0.0, 0.0, 1.0],
+                shininess=0,
+                smooth_shading=1
+            )
             dic_window[f"win_{SIDE}_1"].addObjects(dic_obj[f"fusion_{SIDE}"])
             dic_window[f"win_{SIDE}_1"].camera(view_quaternion=middle_view if SIDE == "L" else side_view)
             dic_window[f"win_{SIDE}_2"].addObjects(dic_obj[f"fusion_{SIDE}"])
@@ -374,7 +387,7 @@ def main():
                 image_files.append(gene_img_path2)
 
         if SNAPSHOT:
-            create_grid(image_files,2,f"{SAVE_DIR}/ABCD_all_{GENE}.png",  #f"{SAVE_DIR}/UKB_{GENE}.png", 
+            create_grid(image_files,2,f"{SAVE_DIR}/{BASE}_{GENE}.png",  #f"{SAVE_DIR}/UKB_{GENE}.png", 
                         title=GENE, #GENE
                         palette_path=path_palette,
                         vmin= MINVAL if MINVAL is not None else global_min,
