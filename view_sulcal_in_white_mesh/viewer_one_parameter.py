@@ -1,5 +1,10 @@
 
+"""
+View, projected on the mesh, the value of one parameter on the whole brain.
 
+"""
+
+#region Imports
 # ============================================================
 # Imports
 # ============================================================
@@ -18,12 +23,26 @@ import os
 from PIL import ImageFont, ImageDraw, ImageOps
 
 from scipy.ndimage import distance_transform_edt
+# endregion
 
+# region Constants
+# ============================================================
+# Constants and initialization
+# ============================================================
 
 a = ana.Anatomist()
 
 # Path to parameter file
 
+# Example of prematurity
+REGION_VALUES = "/neurospin/dico/rmenasria/Runs/03_main/Output/final/prematurity/last/ABCD_prematurity_results_final_28_32.csv"
+PARAM = "PREMA"
+CRITERION = "cv_auc_mean"
+CRITERION_DISPLAY = "AUC"
+P_VALUE = "perm_pvalue"
+REGION_WITHOUT_POINTS = True
+
+## Example of logistic regression with IHI
 # path_to_deep_folding = "/neurospin/dico/data/deep_folding/current"
 # path_summary = f"{path_to_deep_folding}/models/Champollion_V1_after_ablation/analysis/QTIM"
 # path_file = "IHI_QTIM_resid_sex_age.csv"
@@ -34,26 +53,17 @@ a = ana.Anatomist()
 # P_VALUE = "p_value"
 # REGION_WITHOUT_POINTS = False
 
-
-REGION_VALUES = "/neurospin/dico/rmenasria/Runs/03_main/Output/final/prematurity/last/ABCD_prematurity_results_final_28_32.csv"
-PARAM = "PREMA"
-CRITERION = "cv_auc_mean"
-CRITERION_DISPLAY = "AUC"
-P_VALUE = "perm_pvalue"
-REGION_WITHOUT_POINTS = True
-
 THRESHOLD = 0.05/56
 MINVAL = 0.5
 MAXVAL = None
 COEF = 1.02
+COMBINE = "MEAN" # "MEAN" # For each vertex, either takes the max or the mean over the overlapping regions
 
 TITLE = PARAM
 
 SAVE_DIR = "/tmp"
-SNAPSHOT = True
+SNAPSHOT = True # if False, plot an anatomist and keep anatomist open, elif True, create a grid, save on file and close anatomist at the end
 VERBOSE = False
-
-
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
 mni_icbm152_nifti_path = aims.carto.Paths.findResourceFile(MNI_ICBM152+"mni_icbm152_nlin_asym_09c.nii.gz")
@@ -65,7 +75,12 @@ mni_icbm152_mesh_path = aims.carto.Paths.findResourceFile(MNI_ICBM152+"default_a
 MASK_DIR = "/neurospin/dico/cmendoza/Runs/17_PhD_2026/Output/mask_skeleton"
 SIDES = ["L", "R"]
 
+# endregion
 
+# region Functions
+# ============================================================
+# Functions
+# ============================================================
 
 def erode_mask_mm(vol, erosion_mm=2.0):
     """
@@ -385,8 +400,15 @@ def create_grid(image_files, n_cols, out_path, title=None, criterion=None,
     grid.save(out_path)
     print(f"Snapshot of the block available at {out_path}")
 
+# endregion
+
+# region MainProgram
+# ============================================================
+# Main program
+# ============================================================
 
 def main():
+    """Main entry point of the program."""
     global MAXVAL
     
     dic_path = {}
@@ -509,7 +531,10 @@ def main():
 
         for i in range(n_vertices):
             if value_list[i]:
-                value = np.max(value_list[i]) #mean, max
+                if COMBINE == "MAX":
+                    value = np.max(value_list[i]) #mean, max
+                else:
+                    value = np.mean(value_list[i])
                 if value <= MINVAL: 
                     # dic_tex[f"tex_{SIDE}"][0][i] = MINVAL
                     dic_tex[f"tex_{SIDE}"][0][i] = COEF * MAXVAL # to use grey palette
@@ -639,6 +664,7 @@ def main():
 
     else:
         Qt.QApplication.instance().exec_()
+# endregion
 
 if __name__ == '__main__':
     main()
