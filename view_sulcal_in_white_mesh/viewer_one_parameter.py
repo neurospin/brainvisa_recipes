@@ -18,7 +18,7 @@ a = ana.Anatomist()
 
 # Path to parameter file
 
-path_to_deep_folding = "/neurospin/dico/data/deep_folding/current"
+# path_to_deep_folding = "/neurospin/dico/data/deep_folding/current"
 # path_summary = f"{path_to_deep_folding}/models/Champollion_V1_after_ablation/analysis/QTIM"
 # path_file = "IHI_QTIM_resid_sex_age.csv"
 # REGION_VALUES = f"{path_summary}/{path_file}"
