@@ -2,6 +2,9 @@
 """
 View, projected on the mesh, the value of one parameter on the whole brain.
 
+As input, you give a csv file called REGION_VALUES:
+- each row is the name of the Champollion_V1 region
+
 """
 
 #region Imports
@@ -57,7 +60,7 @@ THRESHOLD = 0.05/56
 MINVAL = 0.5
 MAXVAL = None
 COEF = 1.02
-COMBINE = "MEAN" # "MEAN" # For each vertex, either takes the max or the mean over the overlapping regions
+COMBINE = "MEAN" # "MEAN" # For each vertex, either takes the max (if "MAX") or the mean over the overlapping regions
 
 TITLE = PARAM
 

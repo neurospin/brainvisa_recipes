@@ -171,7 +171,7 @@ def csv_to_region_value_dic(REGION_VALUES_CSV):
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
 #REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_stats_NOPCA_ABCD_All.tsv"
-REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs.tsv"
+REGION_VALUES = "/neurospin/lnao/Champollion/magma_gene_32PCs_UKB_32PCs_TIV_20genpcs.tsv"
 #REGION_VALUES_CSV = "/home/ad279118/tmp1/all/meta_gencorr_bip_3PCs_summary.csv"
 STATISTIC = "ZSTAT"
 GENE = "ENSG00000186868"
