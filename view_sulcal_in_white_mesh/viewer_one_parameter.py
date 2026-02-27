@@ -65,7 +65,7 @@ COMBINE = "MEAN" # "MEAN" # For each vertex, either takes the max (if "MAX") or 
 TITLE = PARAM
 
 SAVE_DIR = "/tmp"
-SNAPSHOT = True # if False, plot an anatomist and keep anatomist open, elif True, create a grid, save on file and close anatomist at the end
+SNAPSHOT = False # if False, plot an anatomist and keep anatomist open, elif True, create a grid, save on file and close anatomist at the end
 VERBOSE = False
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
