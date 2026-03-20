@@ -60,7 +60,7 @@ THRESHOLD = 0.05/56
 MINVAL = 0.5
 MAXVAL = None
 COEF = 1.02
-COMBINE = "MEAN" # "MEAN" # For each vertex, either takes the max (if "MAX") or the mean over the overlapping regions
+COMBINE = "MAX" # "MEAN" # For each vertex, either takes the max (if "MAX") or the mean over the overlapping regions
 
 TITLE = PARAM
 
