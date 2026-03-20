@@ -5,6 +5,9 @@ View, projected on the mesh, the value of one parameter on the whole brain.
 As input, you give a csv file called REGION_VALUES:
 - each row is the name of the Champollion_V1 region
 
+As output, saves it to {path_output}/images (by default /tmp/images)
+If you want to see it on anatomist, set:
+SNAPSHOT = False
 """
 
 #region Imports
@@ -38,6 +41,7 @@ a = ana.Anatomist()
 # Path to parameter file
 
 # Example of prematurity
+path_output = "/tmp"
 REGION_VALUES = "/neurospin/dico/rmenasria/Runs/03_main/Output/final/prematurity/last/ABCD_prematurity_results_final_28_32.csv"
 PARAM = "PREMA"
 CRITERION = "cv_auc_mean"
@@ -64,8 +68,8 @@ COMBINE = "MAX" # "MEAN" # For each vertex, either takes the max (if "MAX") or t
 
 TITLE = PARAM
 
-SAVE_DIR = "/tmp"
-SNAPSHOT = False # if False, plot an anatomist and keep anatomist open, elif True, create a grid, save on file and close anatomist at the end
+SAVE_DIR = f"{path_output}/images"
+SNAPSHOT = True # if False, plot an anatomist and keep anatomist open, elif True, create a grid, save on file and close anatomist at the end
 VERBOSE = False
 
 MNI_ICBM152 = "../disco-6.0/disco_templates_hbp_morpho/icbm152/mni_icbm152_nlin_asym_09c/t1mri/default_acquisition/"
@@ -372,7 +376,7 @@ def create_grid(image_files, n_cols, out_path, title=None, criterion=None,
     if palette_path:
         pal_img = Image.open(palette_path)
         width, height = pal_img.size
-        pal_img = pal_img.crop((int(width*vmin), 0, int(width*vmax), height))
+        # pal_img = pal_img.crop((int(width*vmin), 0, int(width*vmax), height))
         pal_img = pal_img.rotate(90, expand=True)
         pal_w, pal_h = pal_img.size
         x_pal = (grid.width - pal_w) - palette_margin
@@ -594,9 +598,10 @@ def main():
                   objects=[dic_obj[f"tex_obj_{SIDE}"]],
                   interpolation="rgb")
         dic_obj[f"fusion_{SIDE}"] = a.fusionObjects([dic_obj[f"tex_obj_{SIDE}"], dic_obj[f"mni_icbm152_{SIDE}mesh_obj"]], "FusionTexSurfMethod")
-        dic_obj[f"fusion_{SIDE}"].setPalette('BR-palette', 
-                                            minVal=MINVAL, 
-                                            maxVal=COEF*MAXVAL)
+        dic_obj[f"fusion_{SIDE}"].setPalette('BR-palette',
+                                            minVal=MINVAL,
+                                            maxVal=COEF*MAXVAL,
+                                            absoluteMode=True)
         if VERBOSE:
             # print(f"min val set to palette at : {MINVAL if MINVAL is not None else None}")
             print(f"Max val set to palette as: {1.01*MAXVAL if MAXVAL is not None else 1.01*global_max}")
@@ -629,10 +634,11 @@ def main():
 
         if SNAPSHOT:
             if not os.path.exists(SAVE_DIR):
-                print(SAVE_DIR, "doesn't exist ! Check your directory.")
+                os.makedirs(SAVE_DIR)
             
             path_palette = os.path.join(SAVE_DIR, f"{PARAM}_pal.jpg")
-            pal_im = dic_obj[f"fusion_{SIDE}"].palette().toQImage(int(512/(MAXVAL-MINVAL)), 64)
+            # pal_im = dic_obj[f"fusion_{SIDE}"].palette().toQImage(int(512/(MAXVAL-MINVAL)), 64)
+            pal_im = dic_obj[f"fusion_{SIDE}"].palette().toQImage(512, 64)
             pal_im.save(path_palette)
 
             
