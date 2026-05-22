@@ -1,1 +1,1 @@
-
+[expected_output.png]
